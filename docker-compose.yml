@@ -4,6 +4,8 @@ services:
 
   ubi_ros2_dev:
     container_name: ros2_dev_cnt
+
+    ### change docker image name if applicable
     image: ubicoders/ros2-px4:px4_v1.14_uxrcedds
     #image: mywork:latest
     network_mode: host
