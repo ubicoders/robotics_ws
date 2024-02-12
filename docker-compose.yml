@@ -5,10 +5,12 @@ services:
   ubi_ros2_dev:
     container_name: ros2_dev_cnt
     image: ubicoders/ros2-px4:px4_v1.14_uxrcedds
+    #image: mywork:latest
     network_mode: host
     privileged: true
     stdin_open: true # docker run -i
     tty: true        # docker run -t
+    command: "bash"
     environment:
       - DISPLAY
       - QT_X11_NO_MITSHM=1 
