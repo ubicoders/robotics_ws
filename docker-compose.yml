@@ -36,20 +36,20 @@ services:
   #     - "$HOME/.Xauthority:/root/.Xauthority:rw"
   #     - "/dev/:/dev/"
 
-  # ubi_ros1_dev:
-  #   container_name: ros1_dev_cnt
-  #   image: ubicoders/ros1-px4:px4_v1.14
-  #   network_mode: host
-  #   privileged: true
-  #   stdin_open: true # docker run -i
-  #   tty: true        # docker run -t
-  #   environment:
-  #     - DISPLAY
-  #     - QT_X11_NO_MITSHM=1 
-  #   volumes:
-  #     - "/tmp/.X11-unix/:/tmp/.X11-unix/:rw"
-  #     - "$HOME/.Xauthority:/root/.Xauthority:rw"
-  #     - "/dev/:/dev/"  
+  ubi_ros1_dev:
+    container_name: ros1_dev_cnt
+    image: ubicoders/ros1-px4:px4_v1.14
+    network_mode: host
+    privileged: true
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    environment:
+      - DISPLAY
+      - QT_X11_NO_MITSHM=1 
+    volumes:
+      - "/tmp/.X11-unix/:/tmp/.X11-unix/:rw"
+      - "$HOME/.Xauthority:/root/.Xauthority:rw"
+      - "/dev/:/dev/"  
 
     # entrypoint: /bin/bash
     # deploy:
