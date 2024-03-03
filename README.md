@@ -55,7 +55,7 @@ docker run --name my_new_container mywork:latest
 
 
 ## Putting a new tag to an image
-docker tag [rmi] [id/repo:tag]
+docker tag [img_id] [id/repo:tag]
 
 ## Uploading the image
 docker push [id/repo:tag]
