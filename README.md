@@ -59,3 +59,11 @@ docker tag [img_id] [id/repo:tag]
 
 ## Uploading the image
 docker push [id/repo:tag]
+
+
+
+## Killing a process on port
+
+```
+kill -9 $(lsof -t -i:9001)
+```
