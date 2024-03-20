@@ -2,11 +2,9 @@ version: "3.8"
 
 services:
 
-  ubi_vrobots:
-    container_name: ubi_vrobots
-    image: local_vrbots
-    build:
-      dockerfile: Dockerfile
+  ubi_vrb:
+    container_name: ubi_vrb_cnt
+    image: ubicoders/vrobots:bridge
     network_mode: host
     privileged: true
     stdin_open: true # docker run -i
@@ -14,7 +12,8 @@ services:
 
   ubi_ros2_dev:
     container_name: ros2_dev_cnt
-    image: ubicoders/ros:uxrcedds
+    build: .
+    image:  ws_image
     network_mode: host
     privileged: true
     stdin_open: true # docker run -i
@@ -28,21 +27,6 @@ services:
       - "$HOME/.Xauthority:/root/.Xauthority:rw"
       - "/dev/:/dev/"
     
-  ubi_px4_dev:
-    container_name: px4_dev_cnt
-    image: ubicoders/px4:v1.14
-    network_mode: host
-    privileged: true
-    stdin_open: true # docker run -i
-    tty: true        # docker run -t
-    environment:
-      - DISPLAY
-      - QT_X11_NO_MITSHM=1 
-    volumes:
-      - "/tmp/.X11-unix/:/tmp/.X11-unix/:rw"
-      - "$HOME/.Xauthority:/root/.Xauthority:rw"
-      - "/dev/:/dev/"
-
   ubi_ros1_dev:
     container_name: ros1_dev_cnt
     image: ubicoders/ros1-px4:px4_v1.14
