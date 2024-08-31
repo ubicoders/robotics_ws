@@ -4,7 +4,8 @@ services:
 
   ubi_ros2_dev:
     container_name: ros2_dev_cnt
-    image: ubicoders/ros2:humble_px4_uxrcedds
+    build: .
+    #image: ubicoders/ros2:humble_px4_uxrcedds
     network_mode: host
     privileged: true
     stdin_open: true # docker run -i

@@ -1,4 +1,4 @@
 FROM ubicoders/ros2:humble_px4_uxrcedds
 
-RUN pip install ubicoders_vrobots==0.2.7
-WORKDIR /home/ubuntu/
+RUN echo "source /opt/ros/humble/setup.zsh" >> /root/.zshrc
+RUN echo "alias python=python3" >> /root/.zshrc
